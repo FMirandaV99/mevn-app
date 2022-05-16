@@ -2,7 +2,7 @@ const mongoose = require( 'mongoose' );
 
 const { Schema } = mongoose;
 
-const practiceSchema = new Schema({
+const courseSchema = new Schema({
     professor: { type: mongoose.Schema.Types.ObjectId, ref: 'Professor' },
     subject: String,
     year: Number,
@@ -10,4 +10,4 @@ const practiceSchema = new Schema({
     hoursPerWeek: Number
 });
 
-module.exports = mongoose.model( 'Practice', practiceSchema );
+module.exports = mongoose.model( 'Course', courseSchema );
