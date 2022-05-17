@@ -12,7 +12,7 @@ const courses = require( './routes/courses' );
 
 const app = express();
 
-mongoose.connect( 'mongodb+srv://tito2709:vZIOiA42Ckx3bbZ8@cluster0.zhvcd.mongodb.net/?retryWrites=true&w=majority' )
+mongoose.connect( process.env.MONGO_DB )
     .then( db => console.log('DB is connected') )
     .catch( err => console.log(err) );
 
