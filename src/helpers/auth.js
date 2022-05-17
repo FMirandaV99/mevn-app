@@ -4,7 +4,7 @@ const generateAccesToken = ( user ) => {
 
     return jwt.sign(
         { username: user.username },
-        process.env.SECRET,
+        process.env.JWT_SECRET,
         { expiresIn: '24h' });
 
 }
@@ -17,7 +17,7 @@ const authenticateJWT = ( req, res, next ) => {
     
         const token = authHeader.split(' ')[1];
 
-        jwt.verify(token, process.env.SECRET, (err, user) => {
+        jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
             if (err) {
                 return res.sendStatus(403);
             }

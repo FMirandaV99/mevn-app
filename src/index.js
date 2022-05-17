@@ -1,8 +1,6 @@
 const express = require( 'express' );
 const morgan = require( 'morgan' );
 const mongoose = require( 'mongoose' );
-const jwt = require( 'jsonwebtoken' );
-const bodyParser = require( 'body-parser' );
 
 require('dotenv/config');
 
@@ -14,7 +12,7 @@ const courses = require( './routes/courses' );
 
 const app = express();
 
-mongoose.connect( 'mongodb://localhost/quiz-2-database' )
+mongoose.connect( 'mongodb+srv://tito2709:vZIOiA42Ckx3bbZ8@cluster0.zhvcd.mongodb.net/?retryWrites=true&w=majority' )
     .then( db => console.log('DB is connected') )
     .catch( err => console.log(err) );
 
